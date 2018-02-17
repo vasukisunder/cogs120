@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+
+
+
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+</head> 
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="welcome">
+
+	<div data-role="header">
+		<h1>Prioritize</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	
+	<p>Welcome to the Prioritize app! Use mindfulness to make smart financial decisions! </p>
+	     
+	 <h3 class="ui-title">Set your budget for today:</h3>
+		<form>
+  			 <input type="range" name="slider" id="myBudget" value="25" min="0" max="100"  />
+		</form>
+		<a href="#mainPage" data-role="button" onclick="setBudget()">Submit</a>
+
+</div>
+</div>
+
+<!-- Second page -->
+<div data-role = "page" id="mainPage">
+
+	<div data-role="header">
+		<h1>Prioritize</h1>
+	</div><!-- /header -->
+   <script>
+	function setBudget() {
+    var x = document.getElementById("myBudget").value;
+    var y = "Your budget for today is $" + x + ".00.";
+    document.getElementById("demo").innerHTML = y;
+	}
+	</script>
+
+ <h3 id="demo"></h3>
+
+ <img id="pieChart" src="/css/progressBar.png" margin: 0 width=100%> </img>
+
+
+					<!-- The Item List -->
+
+{{#each Items}}
+<div class="itemDatabase">
+<ul data-role="listview" data-inset="true" >
+    <li><a href="#">
+		<h2>{{name}}</h2>
+		<p class="ui-li-aside"><strong>{{price}}</strong></p>
+		<p><i><strong>{{priority}}</strong></i></p>
+
+	</a></li>
+</ul>
+</div>
+{{/each}}
+
+
+<a href="#addItem" data-role="button">Add Item</a>
+
+
+	</div><!-- /content -->
+
+
+
+<!-- Start of third page -->
+
+<!-- /header -->
+<div data-role="page" id="addItem">
+
+
+	<div data-role="header">
+		<h1>Prioritize</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+	<form id="addItemForm" role="form" method="get" action="/add">
+		<h3>Add the details for this expense!</h3>
+		
+	    <div class="form-group">
+	      <label for="name"> Item Name:</label>
+	      <input type="text" class="form-control" id="name" placeholder="Item Name" name="name">
+	    </div>
+
+	    <div class="form-group">
+	      <label for="price">Item Price:</label>
+	      <input type="text" class="form-control" id="item_price" placeholder="Item Price" name="price">
+	    </div>
+
+	    <fieldset data-role="controlgroup">
+			<legend>Categorize this expense:</legend>
+	     	<input type="radio" name="radio-choice" id="need" value="need" checked="checked" name="need"/>
+	     	<label for="need">Need</label>
+
+	     	<input type="radio" name="radio-choice" id="treat" value="treat" name="treat" />
+	     	<label for="treat">Treat</label>
+
+	     	<input type="radio" name="radio-choice" id="other" value="other" name = "other" />
+	     	<label for="other">Other</label>
+		</fieldset>
+
+
+
+	    <input type="submit" id="submitItem" class="btn btn-default" value="Submit"></input>
+
+
+	</form>
+
+
+	</div>
+	</div><!-- /content -->
+><!-- /page -->
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/prioritize.js"></script>
+
+</body>
+</html>

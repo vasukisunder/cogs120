@@ -1,0 +1,19 @@
+{
+	"Items": [
+		{
+			"name": "Groceries",
+			"price": "$25.00",
+			"priority": "Need"			
+		},
+		{
+			"name": "Boba",
+			"price": "$5.25",
+			"priority": "Treat"			
+		},
+		{
+			"name": "Phone Bill",
+			"price": "$30.00",
+			"priority": "Other"			
+		}
+	]
+}
