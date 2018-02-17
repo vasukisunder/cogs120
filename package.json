@@ -1,10 +1,10 @@
 {
-  "name": "IntroHCI",
+  "name": "cogs230",
   "version": "0.0.1",
-  "author": "Intro HCI Staff",
+  "author": "Vasuki Sunder",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/vasukisunder/cogs120"
   },
   "license": "MIT",
   "private": true,
